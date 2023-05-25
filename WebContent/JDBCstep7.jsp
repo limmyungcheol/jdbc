@@ -81,8 +81,18 @@ C U D 의 경우는 반환되는 데이터가 없다. 따라서 C U D 는 step 6
 
 -->
 
+<!-- Step 7 Connection Close -->
+
+<!-- 
+자바 버전 8 미만까지는 Connection을 닫아주는게 필수 였으나
+8이후 부터는 생략 가능 즉 닫지 않아도 문제가 없다. 자동으로 닫아준다.
 
 
+ -->
 
+<%
+pstmt.close();
+conn.close();
+%>
 </body>
 </html>
