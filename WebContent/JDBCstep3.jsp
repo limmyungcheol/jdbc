@@ -27,26 +27,6 @@
 	
 %>
 
-<!-- Step 3 Connection Object -->
-
-<%
-
-	try {
-//	String host = "jdbc:mysql://localhost:3306/"; 마리아 db 일때
-	String host = "jdbc:mariadb://localhost:3306/";
-	String id = "root";
-	String pw = "0000";
-
-
-	Connection conn = DriverManager.getConnection(host, id, pw);
-	out.print("연결 객체 생성 성공,,,<br>");
-	}catch(SQLException err){
-		out.print("연결 객체 생성 실패....<br>" + err.getMessage());
-		
-		
-	}
-
-%>
 
 </body>
 </html>
