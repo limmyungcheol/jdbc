@@ -26,25 +26,36 @@
 	}
 	
 %>
-
 <!-- Step 3 Connection Object -->
 
 <%
-
+	Connection conn = null;
 	try {
-//	String host = "jdbc:mysql://localhost:3306/"; 마리아 db 일때
-	String host = "jdbc:mariadb://localhost:3306/";
-	String id = "root";
-	String pw = "0000";
+	//	String host = "jdbc:mysql://localhost:3306/"; 마리아 db 일때
+		String host = "jdbc:mariadb://localhost:3306/lmc";
+		String id = "root";
+		String pw = "1234";
+	
+	
+		conn = DriverManager.getConnection(host, id, pw);
+		out.print("연결 객체 생성 성공,,,<br>");
+		}catch(SQLException err){
+			out.print("연결 객체 생성 실패....<br>" + err.getMessage());
+			
+			
+		}
 
+%>
 
-	Connection conn = DriverManager.getConnection(host, id, pw);
-	out.print("연결 객체 생성 성공,,,<br>");
-	}catch(SQLException err){
-		out.print("연결 객체 생성 실패....<br>" + err.getMessage());
-		
-		
-	}
+<!-- Step 4 Statement Object -->
+
+<%
+	
+	String sql = "SELECT * FROM lmc";
+	
+	PreparedStatement pstmt = conn.prepareStatement(sql);
+	out.print("구문 생성 성공");
+
 
 %>
 
