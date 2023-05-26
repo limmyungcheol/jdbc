@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 	
 <%@ page import="java.sql.*" %>
-<%@ page import="utill.*" %>
+<%@ page import="util.*" %>
 
 <!DOCTYPE html>
 <html>
